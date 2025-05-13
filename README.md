@@ -17,3 +17,4 @@ practice the parallel programming
 skills by implementing the scheduling and parallel programming model of the well-known
 big data processing framework, MapReduce.
 ### Final project
+Accelerated PSO by parallelizing the computation of each particle on the GPU using CUDA.
