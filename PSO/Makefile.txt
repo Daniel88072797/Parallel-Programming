@@ -1,0 +1,29 @@
+NVFLAGS  := -std=c++11 -O3 -Xptxas="-v" -arch=sm_61 
+LDFLAGS  := -lm
+EXES     := PSO_serial PSO_parallel PSO_parallel_1 PSO_parallel_2 PSO_parallel_3 PSO_parallel_4 PSO_parallel_5
+
+alls: $(EXES)
+
+clean:
+	rm -f $(EXES)
+
+PSO_serial: PSO_serial.cu
+	nvcc $(NVFLAGS) $(LDFLAGS) -o $@ $?
+
+PSO_parallel: PSO_parallel.cu
+	nvcc $(NVFLAGS) $(LDFLAGS) -o $@ $?
+
+PSO_parallel_1: PSO_parallel_1.cu
+	nvcc $(NVFLAGS) $(LDFLAGS) -o $@ $?
+
+PSO_parallel_2: PSO_parallel_2.cu
+	nvcc $(NVFLAGS) $(LDFLAGS) -o $@ $? 
+	
+PSO_parallel_3: PSO_parallel_3.cu
+	nvcc $(NVFLAGS) $(LDFLAGS) -o $@ $?
+
+PSO_parallel_4: PSO_parallel_4.cu
+	nvcc $(NVFLAGS) $(LDFLAGS) -o $@ $?
+
+PSO_parallel_5: PSO_parallel_5.cu
+	nvcc $(NVFLAGS) $(LDFLAGS) -o $@ $?
